@@ -1,0 +1,9 @@
+{
+  "name": "Stevoshua Tech & Gadgets",
+  "short_name": "Stevoshua Tech",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b0a",
+  "theme_color": "#52c51b",
+  "icons": [{"src":"logo.png","sizes":"512x512","type":"image/png","purpose":"any"}]
+}

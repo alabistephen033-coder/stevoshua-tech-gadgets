@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alabistephen033-coder.github.io/stevoshua-tech-gadgets/sitemap.xml

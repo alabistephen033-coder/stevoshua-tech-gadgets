@@ -25,12 +25,13 @@
   <header class="nav">
     <a href="#home" class="brand"><img src="logo.png" alt="Stevoshua Tech & Gadgets"></a>
     <nav class="desktop-nav">
-      <a href="#services">Services</a>
-      <a href="#gadgets">Gadgets</a>
-      <a href="#repair">Repair</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <a href="#services">Services</a>
+  <a href="#gadgets">Gadgets</a>
+  <a href="#phones">Buy • Sell • Swap</a>
+  <a href="#repair">Repair</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
     <a class="nav-btn" href="https://wa.me/2349025050779" target="_blank" rel="noopener">WhatsApp</a>
   </header>
 
@@ -106,7 +107,172 @@
       </div>
     </section>
 
+    <!-- BUY • SELL • SWAP PHONES -->
+    <section class="section phone-market" id="phones">
 
+      <div class="section-heading reveal">
+        <span>PHONES</span>
+        <h2>Buy. Sell. Swap.</h2>
+        <p>Looking for a phone, selling yours or ready to swap? Tell us what you need and we'll help you find the right deal.</p>
+      </div>
+
+      <div class="cards">
+
+        <!-- BUY -->
+        <article class="card reveal">
+          <div class="icon">🛒</div>
+          <h3>Buy a Phone</h3>
+          <p>
+            Tell us the phone you're looking for, your preferred storage,
+            condition and budget.
+          </p>
+
+          <button
+            class="primary phone-action"
+            type="button"
+            onclick="openPhoneForm('buy')">
+            Find My Phone →
+          </button>
+        </article>
+
+        <!-- SELL -->
+        <article class="card reveal">
+          <div class="icon">💰</div>
+          <h3>Sell Your Phone</h3>
+          <p>
+            Have a phone to sell? Send us the model, condition and details
+            for a buying enquiry.
+          </p>
+
+          <button
+            class="primary phone-action"
+            type="button"
+            onclick="openPhoneForm('sell')">
+            Sell My Phone →
+          </button>
+        </article>
+
+        <!-- SWAP -->
+        <article class="card reveal">
+          <div class="icon">🔄</div>
+          <h3>Swap / Trade-In</h3>
+          <p>
+            Want to change your current phone? Tell us what you have and
+            what you'd like to get.
+          </p>
+
+          <button
+            class="primary phone-action"
+            type="button"
+            onclick="openPhoneForm('swap')">
+            Request a Swap →
+          </button>
+        </article>
+
+      </div>
+
+      <!-- PHONE ENQUIRY FORM -->
+      <div class="repair-wrap phone-market-form reveal" id="phoneMarketForm" style="display:none;">
+
+        <div class="repair-info">
+          <div class="repair-number">02</div>
+
+          <h3 id="phoneFormTitle">Phone Enquiry</h3>
+
+          <p id="phoneFormDescription">
+            Tell us what you're looking for and we'll prepare a WhatsApp enquiry.
+          </p>
+
+          <div class="mini-steps">
+            <span>Phone details</span>
+            <span>Your preference</span>
+            <span>WhatsApp enquiry</span>
+          </div>
+        </div>
+
+        <form class="repair-form" id="phoneMarketFormElement">
+
+          <input type="hidden" id="phoneActionType">
+
+          <label>
+            Your name
+            <input
+              id="marketName"
+              type="text"
+              placeholder="Your name"
+              required>
+          </label>
+
+          <label>
+            WhatsApp number
+            <input
+              id="marketPhone"
+              type="tel"
+              placeholder="e.g. 09025050779"
+              required>
+          </label>
+
+          <label>
+            Phone model
+            <input
+              id="marketModel"
+              type="text"
+              placeholder="e.g. iPhone 13 Pro / Samsung A15"
+              required>
+          </label>
+
+          <label>
+            Storage
+            <select id="marketStorage">
+              <option value="">Select storage</option>
+              <option>64GB</option>
+              <option>128GB</option>
+              <option>256GB</option>
+              <option>512GB</option>
+              <option>1TB</option>
+              <option>Not sure</option>
+            </select>
+          </label>
+
+          <label>
+            Condition
+            <select id="marketCondition">
+              <option value="">Select condition</option>
+              <option>Brand new</option>
+              <option>UK used</option>
+              <option>Nigerian used</option>
+              <option>Any condition</option>
+            </select>
+          </label>
+
+          <label id="marketBudgetLabel">
+            Budget / Expected price
+            <input
+              id="marketBudget"
+              type="text"
+              placeholder="e.g. ₦350,000">
+          </label>
+
+          <label>
+            Additional details
+            <textarea
+              id="marketDetails"
+              rows="4"
+              placeholder="Tell us anything else we should know..."></textarea>
+          </label>
+
+          <button class="primary" type="submit">
+            Send Enquiry on WhatsApp ↗
+          </button>
+
+          <small>
+            Your information is used only to prepare your WhatsApp enquiry.
+          </small>
+
+        </form>
+      </div>
+
+    </section>
     <section class="section repair-section" id="repair">
       <div class="section-heading reveal">
         <span>REPAIR REQUEST</span>

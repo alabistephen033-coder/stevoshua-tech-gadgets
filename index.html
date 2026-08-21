@@ -27,8 +27,8 @@
     <nav class="desktop-nav">
   <a href="#services">Services</a>
   <a href="#gadgets">Gadgets</a>
-  <a href="#phones">Buy • Sell • Swap</a>
-  <a href="#repair">Repair</a>
+<a href="#buy-sell-swap">Buy / Sell / Swap</a>
+<a href="#repair">Repair</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -272,7 +272,87 @@
         </form>
       </div>
 
-    </section>
+    </section><section class="section buy-sell-swap" id="buy-sell-swap">
+  <div class="section-heading reveal">
+    <span>BUY • SELL • SWAP</span>
+    <h2>Looking for a phone? Let’s make it happen.</h2>
+  </div>
+
+  <div class="repair-wrap">
+    <div class="repair-info reveal">
+      <div class="repair-number">02</div>
+      <h3>Phones. Deals. Choices.</h3>
+
+      <p>
+        Want to buy a phone, sell your current phone or swap it for another
+        device? Tell us what you have and what you're looking for.
+      </p>
+
+      <div class="mini-steps">
+        <span>Buy a phone</span>
+        <span>Sell your phone</span>
+        <span>Swap / Trade-in</span>
+      </div>
+    </div>
+
+    <form class="repair-form reveal" id="phoneDealForm">
+
+      <label>
+        What do you want to do?
+        <select id="dealType" required>
+          <option value="">Select an option</option>
+          <option value="Buy a phone">📱 Buy a phone</option>
+          <option value="Sell my phone">💰 Sell my phone</option>
+          <option value="Swap / Trade-in">🔄 Swap / Trade-in</option>
+        </select>
+      </label>
+
+      <label>
+        Your name
+        <input id="dealName" type="text" placeholder="Your name" required>
+      </label>
+
+      <label>
+        Phone model
+        <input id="dealPhone" type="text"
+          placeholder="e.g. iPhone 13 / Samsung A15" required>
+      </label>
+
+      <label>
+        Phone condition
+        <select id="dealCondition" required>
+          <option value="">Select condition</option>
+          <option value="Brand new">Brand new</option>
+          <option value="Used - very good">Used - very good</option>
+          <option value="Used - good">Used - good</option>
+          <option value="Fair condition">Fair condition</option>
+          <option value="Faulty / damaged">Faulty / damaged</option>
+        </select>
+      </label>
+
+      <label>
+        Budget / Expected price
+        <input id="dealPrice" type="text"
+          placeholder="e.g. ₦250,000">
+      </label>
+
+      <label>
+        Additional details
+        <textarea id="dealDetails" rows="4"
+          placeholder="Tell us what you're looking for or describe the phone..."></textarea>
+      </label>
+
+      <button class="primary" type="submit">
+        Send Phone Enquiry ↗
+      </button>
+
+      <small>
+        Your enquiry will be sent directly to Stevoshua Tech & Gadgets on WhatsApp.
+      </small>
+
+    </form>
+  </div>
+</section>
     <section class="section repair-section" id="repair">
       <div class="section-heading reveal">
         <span>REPAIR REQUEST</span>
@@ -449,8 +529,39 @@
       const budgetLabel = document.getElementById('marketBudgetLabel');
 
       actionType.value = type;
+document.getElementById('phoneDealForm').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-    if ('serviceWorker' in navigator) {
+  const type = document.getElementById('dealType').value;
+  const name = document.getElementById('dealName').value.trim();
+  const phone = document.getElementById('dealPhone').value.trim();
+  const condition = document.getElementById('dealCondition').value;
+  const price = document.getElementById('dealPrice').value.trim();
+  const details = document.getElementById('dealDetails').value.trim();
+
+  const message =
+`Hello Stevoshua Tech & Gadgets 👋
+
+PHONE BUY / SELL / SWAP ENQUIRY
+
+Request: ${type}
+Name: ${name}
+Phone: ${phone}
+Condition: ${condition}
+Budget / Expected price: ${price || 'Not specified'}
+
+Additional details:
+${details || 'None'}
+
+I would like to know more about this phone deal.`;
+
+  window.open(
+    'https://wa.me/2349025050779?text=' +
+    encodeURIComponent(message),
+    '_blank'
+  );
+});
+   if  ('serviceWorker' in navigator) {
       window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
     }
   </script>

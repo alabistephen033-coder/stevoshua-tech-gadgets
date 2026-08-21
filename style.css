@@ -74,3 +74,8 @@ footer{padding:28px 7%;display:flex;align-items:center;justify-content:space-bet
 .review-note{border:1px solid var(--line);border-radius:22px;padding:40px;background:#f7faf6;max-width:780px}.quote{font-size:60px;line-height:.6;color:var(--green)}.review-note p{font-size:21px;font-weight:750;margin:20px 0 8px}.review-note small{color:var(--muted)}
 @media(max-width:950px){.repair-wrap{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.repair-form{grid-template-columns:1fr}.repair-form label:nth-child(3){grid-column:auto}.repair-form small{grid-column:auto}.process-grid{grid-template-columns:1fr}.repair-info,.repair-form{padding:26px}.product-art{height:80px}}
+/* Fix: make reveal sections visible */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}

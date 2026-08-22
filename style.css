@@ -79,3 +79,146 @@ footer{padding:28px 7%;display:flex;align-items:center;justify-content:space-bet
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* STEVOSHUA CATALOG */
+
+.catalog {
+  background: #f7faf6;
+}
+
+.catalog .section-heading p {
+  color: var(--muted);
+  max-width: 650px;
+  margin-top: 15px;
+}
+
+.catalog-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.catalog-filter {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #454c47;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.catalog-filter:hover {
+  border-color: var(--green);
+  color: #31980e;
+}
+
+.catalog-filter.active {
+  background: var(--dark);
+  color: #fff;
+  border-color: var(--dark);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+}
+
+.catalog-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,.035);
+  transition: .25s;
+}
+
+.catalog-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.1);
+  border-color: #bfe9ad;
+}
+
+.catalog-image {
+  height: 190px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg,#eaf9e3,#f8faf7);
+}
+
+.catalog-image span {
+  font-size: 75px;
+}
+
+.catalog-info {
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  min-height: 235px;
+}
+
+.catalog-info small {
+  color: #43a817;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.catalog-info h3 {
+  font-size: 21px;
+  margin: 7px 0;
+}
+
+.catalog-info p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+
+.catalog-info strong {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.catalog-info .primary {
+  margin-top: auto;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* CATALOG MOBILE */
+
+@media(max-width:950px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:600px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-image {
+    height: 180px;
+  }
+
+  .catalog-info {
+    min-height: 220px;
+  }
+
+  .catalog-filters {
+    gap: 7px;
+  }
+
+  .catalog-filter {
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+}
+

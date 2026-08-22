@@ -811,5 +811,69 @@ I would like to know more about this phone deal.`;
   }
 } 
   </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.getElementById('repairForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('customerName').value.trim();
+    const model = document.getElementById('phoneModel').value.trim();
+    const problem = document.getElementById('problem').value.trim();
+
+    const message = `Hello Stevoshua Tech & Gadgets,
+
+Repair enquiry:
+Name: ${name}
+Phone model: ${model}
+Problem: ${problem}`;
+
+    window.open(
+      'https://wa.me/2349025050779?text=' + encodeURIComponent(message),
+      '_blank'
+    );
+  });
+
+  /* CATALOG FILTER */
+  document.querySelectorAll('.catalog-filter').forEach(button => {
+    button.addEventListener('click', function() {
+
+      const selectedCategory = this.getAttribute('data-filter');
+
+      document.querySelectorAll('.catalog-filter').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      this.classList.add('active');
+
+      document.querySelectorAll('.catalog-card').forEach(card => {
+
+        const cardCategory = card.getAttribute('data-category');
+
+        if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+
+      });
+    });
+  });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+</script>
+
+</body>
+</html>
 </body>
 </html>
